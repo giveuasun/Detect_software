@@ -8,14 +8,17 @@ using namespace std;
 
 int main()
 {
-	//参数设计
+	//DVB
 	const string filename = "D:\\Code\\mCode\\韩博\\matlab识别程序\\DVB标准\\DVB_IF.dat";
 	const size_t max_read_count = 4000000;
 	const int sampleoffset = 0;//略过量
+
+
+
+
 	//读取
 	ifstream ifile(filename, ios::binary);//输入流对象，二进制方式打开
-	if (!ifile)
-	{
+	if (!ifile){
 		cerr << "无法打开文件" << filename << endl;
 		return 1;
 	}
@@ -40,19 +43,12 @@ int main()
 	//精度转换
 	Ipp32f* pData32f = ippsMalloc_32f(max_read_count);
 	ippsConvert_16s32f(pData, pData32f, max_read_count);
+	ippsFree(pData);
 	//主程序流程
 	DVB* dvb = new DVB;
-	//dvb->work(pData32f, max_read_count, 250e6, 62.5e6, 9.5e6);
+	int kkk = dvb->work(pData32f, max_read_count, 250e6, 62.5e6, 9.5e6, 94308);
 
-	Ipp32fc a[2] = {{ {3} ,{5} }, { {2} ,{2} }};
-	Ipp32fc b[2] = { {{1},{-1}},{{3},{5}} };
-	Ipp32fc c[2];
-
-	ippsMul_32fc(&a[0], &b[0], &c[0], 2);
-
-
-	//结束,释放堆
-	ippsFree(pData);
+	//结束
 	ippsFree(pData32f);
 	return 0;
 }
