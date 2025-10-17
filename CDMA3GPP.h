@@ -9,18 +9,15 @@
 	}\
 }
 
-class DVB
+class CDMA3GPP
 {
 public:
-	int work(Ipp32f* data, int datalen, float sample_rate, float freq, float Bd, float thread);
+	int work(Ipp32f* data, int datalen, float sample_rate, float freq, float thread);
 private:
 	void r2iq(float freq, float fs, float* pSrc, float* pDstI, float* pDstQ, size_t len);
 	void lpfCoefDesignIPP(float rFreq, int tapsLen, float* pDst);
 	void doLpfIPP(float* pSrc, float* pDst, int len, float rFreq, int tapsLen);
-	//调用先计算：int outLen = (float)inLen * outRate / inRate;
-	//并且分配outData的内存,函数执行后outLen记得检查
 	void resampleIPP(int inRate, int outRate, Ipp32f* inData, int inLen, Ipp32f* outData, int& outLen);
-	void modUW(Ipp32fc* mod);
-	//预先分配内存：Ipp32f* corr_m = ippsMalloc_32f(dataLen - 104);//储存相关模
-	void corr(Ipp32fc* pData, int Len, Ipp32fc* pUW, Ipp32f* corr_m);
+	void PNGen(float* f, float* regIni, int order, int way, float* m);
 };
+

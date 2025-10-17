@@ -140,11 +140,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CDMA3GPP.cpp" />
     <ClCompile Include="DVB.cpp" />
+    <ClCompile Include="GPS.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CDMA3GPP.h" />
     <ClInclude Include="DVB.h" />
+    <ClInclude Include="GPS.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

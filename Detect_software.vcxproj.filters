@@ -21,9 +21,21 @@
     <ClCompile Include="DVB.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="CDMA3GPP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GPS.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="DVB.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CDMA3GPP.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GPS.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>
