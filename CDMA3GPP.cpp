@@ -217,7 +217,7 @@ int CDMA3GPP::work(Ipp32f* data, int datalen, float sample_rate, float freq, flo
 	{
 		if (corrl[i]>thread)
 		{
-			num = i+1;
+			num = i + 1;
 			num1 = num + 32768 * 4;
 			if (num1 < corLen)
 			{

@@ -16,11 +16,11 @@ int main()
 		//string filename = "D:\\Code\\mCode\\韩博\\matlab识别程序\\DVB标准\\DVB_IF.dat";
 		//int max_read_count = 4000000;
 
-		string filename = "D:\\Code\\mCode\\韩博\\matlab识别程序\\CDMA3GPP\\CDMAIF3GPP.dat";
-		int max_read_count = 500000;
+		//string filename = "D:\\Code\\mCode\\韩博\\matlab识别程序\\CDMA3GPP\\CDMAIF3GPP.dat";
+		//int max_read_count = 500000;
 
-		//string filename = "D:\\Code\\mCode\\韩博\\matlab识别程序\\GNSS\\GPSIFnew.dat";
-		//int max_read_count = 120000;
+		string filename = "D:\\Code\\mCode\\韩博\\matlab识别程序\\GNSS\\GPSIFnew.dat";
+		int max_read_count = 120000;
 
 
 
@@ -61,10 +61,10 @@ int main()
 	//int k1 = dvb->work(pData32f, max_read_count, 250e6, 62.5e6, 9.5e6, 94308);
 
 	CDMA3GPP* cd = new CDMA3GPP;
-	int k2 = cd->work(pData32f, max_read_count, 5e6, 1.25e6, 8e+9);
+	//int k2 = cd->work(pData32f, max_read_count, 5e6, 1.25e6, 8e+9);
 
 	GPS* gp = new GPS;
-	//int k3 = gp->work(pData32f, max_read_count, 12e6, 3e6, 0);
+	int k3 = gp->work(pData32f, max_read_count, 12e6, 3e6, 1.5e+08);
 
 	//结束
 	ippsFree(pData32f);

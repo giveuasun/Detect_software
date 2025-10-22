@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include <ipp.h>
 #define IPPCHECK(func) \
 {\
